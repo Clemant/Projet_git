@@ -1,18 +1,129 @@
+@font-face {
+  font-family: "Font Awesome Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../fonts/fa-regular-400.eot");
+  src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/fa-regular-400.woff2") format("woff2"),
+    url("../fonts/fa-regular-400.woff") format("woff"),
+    url("../fonts/fa-regular-400.ttf") format("truetype"),
+    url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome Solid";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/fa-solid-900.woff2") format("woff2"),
+    url("../fonts/fa-solid-900.woff") format("woff"),
+    url("../fonts/fa-solid-900.ttf") format("truetype"),
+    url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../fonts/fa-brands-400.eot");
+  src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/fa-brands-400.woff2") format("woff2"),
+    url("../fonts/fa-brands-400.woff") format("woff"),
+    url("../fonts/fa-brands-400.ttf") format("truetype"),
+    url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
 html,
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: red;
+  font-size: 1em;
+  /* 1em = 16px */
 }
 
-.div {
-  border: 1 px solid;
-  height: 10vh;
-  width: 10vw;
-  display: flex;
-  justify-content: space-evenly;
+p {
+  font-size: 2em;
 }
 
-.h1 {
-  font-size: 20px;
-  color: red;
+span {
+  font-size: 1rem;
+}
+
+.avis {
+  /* em pour font-size
+     px pour padding 
+  */
+  background-color: white;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 20px;
+  width: 50vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.avis p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 2em;
+  position: absolute;
+  right: calc(100% / 2 - 6px / 2);
+}
+
+blockquote {
+  position: relative;
+}
+
+.note:before {
+  font-family: "Font Awesome Solid";
+}
+.note[data-note="1"]:before {
+  content: "\f005";
+}
+.note[data-note="2"]:before {
+  content: "\f005\f005";
+}
+.note[data-note="3"]:before {
+  content: "\f005\f005\f005";
+}
+.note[data-note="4"]:before {
+  content: "\f005\f005\f005\f005";
+}
+.note[data-note="5"]:before {
+  content: "\f005\f005\f005\f005\f005";
+}
+
+.note:after {
+  font-family: "Font Awesome Regular";
+  position: relative;
+  left: -3px;
+}
+.note[data-note="4"]:after {
+  content: "\f005";
+}
+.note[data-note="3"]:after {
+  content: "\f005\f005";
+}
+.note[data-note="2"]:after {
+  content: "\f005\f005\f005";
+}
+.note[data-note="1"]:after {
+  content: "\f005\f005\f005\f005";
+}
+.note[data-note="0"]:after {
+  content: "\f005\f005\f005\f005\f005";
+}
+
+.note span {
+  position: absolute;
+  z-index: -1;
+  top: -9999em;
+  left: -9999em;
 }
